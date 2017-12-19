@@ -1,0 +1,43 @@
+.has-full-width {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.days-bar {
+  padding-top: 2rem;
+  padding-bottom: 0;
+}
+
+.tabs.is-toggle li.is-active a {
+  background-color: #5DCEB3;
+  border-color: #5DCEB3;
+}
+
+.movies {
+  padding-top: 2rem;
+}
+
+.movies figure {
+  width: 200px;
+}
+
+.abstract {
+  padding-top: 0.5rem;
+}
+
+.ticket {
+  margin-right: 0.35rem;
+}
+
+.filters {
+  padding-top: 2rem;
+}
+
+.filters .section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.filters label {
+  padding-left: 0.5rem;
+}
