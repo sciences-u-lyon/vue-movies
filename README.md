@@ -93,3 +93,29 @@ and return this list (`movies`) in `data()` function. Look at `App` component in
 - Use `v-for` directive to replace all `<Movie>` tags with a single one. The `Movie` component needs to be updated as it now needs a prop `movie` (type `Object`) instead of `poster`, `title`, `subtitle` and `asbtract`. You can use `movie.id` as a `key` for the `v-for` directive.
 - In `Movie` component, add a `computed` property `subtitle()` to render the movie subtitle from its `release`, `genres` and `country` properties.
 - Now, the `Ticket` component should be within the `Movie` component. Replace the `<slot></slot>` tag with a `<Ticket>` tag associated with a `v-for` directive (a movie has multiple tickets). You should only display tickets from first day (`movie.days[0].tickets`). You can use `ticket.id` as a `key` for the `v-for` directive.
+
+## Step 3
+
+> Display tickets per day
+
+As you can see in the movies data, each movie has 7 days and each day has 1 to 5 tickets. To display the tickets corresponding to a given day, we need a way to communicate from the `Week` component to the `Movie` components. To do this, we will emit an event (the selected day) from the `Week` component to its parent `App` component. Then, the `App` component will transmit the selected day to the `Movies` component with a prop.
+- Add a new property in the `App` component `data()` function: `currentDayIndex` with 0 as the value.
+- Update the `Movie` component to add a new prop: `currentDayIndex` (type `Number`). In the HTML template, use this new prop to select the day in the  `<Ticket v-for="...">` loop.
+- In the `Week` component, add a `data()` function to return a `days` array:
+
+```javascript
+days: [
+  'Today',
+  'Mon 1/1',
+  'Tue 2/1',
+  'Wed 3/1',
+  'Thu 4/1',
+  'Fri 5/1',
+  'Sat 6/1'
+]
+```
+
+Replace the hard coded `<li>` tags with a single `<li>` and a `v-for` directive that loops on `days` list.
+- Add a method `isActive(index)` that returns `true` when the current day index from the loop is the selected day. Use this method in the template to toggle the CSS class `is-active` on the `<li>` tag.
+- Add a method `selectDay(index)` that should be called on `click` event on the `<a>` tag. This method emits an event `dayUpdate` with the day index.
+- Finally, in `App` component, add a method `updateDay(dayIndex)` that should be called on `dayUpdate` event. In this method, you need to update `currentDayIndex` with the new day index.
