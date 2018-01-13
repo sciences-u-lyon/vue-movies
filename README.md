@@ -78,3 +78,18 @@ A `Movie` component has 4 props: `poster`, `title`, `subtitle` and `asbtract`. A
 ```
 
 A `Ticket` component has 1 prop: `time` (type `String`). Replace hard coded time with `time` prop in `Ticket` template. Use `Ticket` components in `App.vue`, within each `<Movie>` tag.
+
+## Step 2
+
+> Fetch movies from JSON, use `v-for` directive and computed properties
+
+- In `App.vue` component, import `movies` from `/assets/json/movies.json`:
+
+```javascript
+import { movies } from '@/assets/json/movies.json'
+```
+
+and return this list (`movies`) in `data()` function. Look at `App` component in the Vue devtools, you should see the list of 12 movies.
+- Use `v-for` directive to replace all `<Movie>` tags with a single one. The `Movie` component needs to be updated as it now needs a prop `movie` (type `Object`) instead of `poster`, `title`, `subtitle` and `asbtract`. You can use `movie.id` as a `key` for the `v-for` directive.
+- In `Movie` component, add a `computed` property `subtitle()` to render the movie subtitle from its `release`, `genres` and `country` properties.
+- Now, the `Ticket` component should be within the `Movie` component. Replace the `<slot></slot>` tag with a `<Ticket>` tag associated with a `v-for` directive (a movie has multiple tickets). You should only display tickets from first day (`movie.days[0].tickets`). You can use `ticket.id` as a `key` for the `v-for` directive.
