@@ -119,3 +119,25 @@ Replace the hard coded `<li>` tags with a single `<li>` and a `v-for` directive 
 - Add a method `isActive(index)` that returns `true` when the current day index from the loop is the selected day. Use this method in the template to toggle the CSS class `is-active` on the `<li>` tag.
 - Add a method `selectDay(index)` that should be called on `click` event on the `<a>` tag. This method emits an event `dayUpdate` with the day index.
 - Finally, in `App` component, add a method `updateDay(dayIndex)` that should be called on `dayUpdate` event. In this method, you need to update `currentDayIndex` with the new day index.
+
+## Step 4
+
+> Filter movies by time of day, genre and country
+
+As you did with `Week` component, `TimeFilter`, `GenreFilter` and `CountryFilter` components need to communicate with `Movie` component through `App` component with events and props. Let's start with `TimeFilter`.
+- Add a new property in the `App` component `data()` function:
+
+```javascript
+periods: {
+  BEFORE_7: false,
+  AFTER_7: false
+}
+```
+
+This property handles the state of the `TimeFilter` component.
+- Add a new prop: `periods` (type `Object`) in `TimeFilter` to receive `periods` data from `App` component template.
+- In `TimeFilter` component template, bind the `periods` to the `checked` attribute of both `input` tags (i.e. "before-7" checkbox should be checked if `BEFORE_7` is `true` and "after-7" checkbox should be checked if `AFTER_7` is `true`).
+- Add a method `updatePeriod(periodId, $event)` that should be called on `change` event on both `input` tags. This method emits an event `periodUpdate` with a period id and its checked property.
+- In `App` component, add a method `updatePeriod(periodId, checked)` that should be called on `periodUpdate`. In this method, you need to update `periods` boolean flags.
+- In `Movie` component, add a new prop: `periods` (type `Object`). As you can guess, this prop should be used to transmit `periods` from `App` component.
+- Add a new `computed` property `ticketsAvailable()` that should return `true` if both `periods` are checked or unchecked. If `BEFORE_7` period is checked, the method should return `true` only if the movie has tickets available before 7 for the current day. If `AFTER_7` period is checked, the method should return `true` only if the movie has tickets available after 7 for the current day. Use this `computed` property in a `v-if` directive on the root `tag` (`<article>`) of the template to show or hide movies according to the checked periods.
