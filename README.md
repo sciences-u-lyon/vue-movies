@@ -122,10 +122,10 @@ Replace the hard coded `<li>` tags with a single `<li>` and a `v-for` directive 
 
 ## Step 4
 
-> Filter movies by time of day, genre and country
+> Filter movies by time of day
 
-As you did with `Week` component, `TimeFilter`, `GenreFilter` and `CountryFilter` components need to communicate with `Movie` component through `App` component with events and props. Let's start with `TimeFilter`.
-- Add a new property in the `App` component `data()` function:
+As you did with `Week` component, `TimeFilter` component needs to communicate with `Movie` component through `App` component with events and props.
+- Add a new property in `App` component `data()` function:
 
 ```javascript
 periods: {
@@ -137,7 +137,37 @@ periods: {
 This property handles the state of the `TimeFilter` component.
 - Add a new prop: `periods` (type `Object`) in `TimeFilter` to receive `periods` data from `App` component template.
 - In `TimeFilter` component template, bind the `periods` to the `checked` attribute of both `input` tags (i.e. "before-7" checkbox should be checked if `BEFORE_7` is `true` and "after-7" checkbox should be checked if `AFTER_7` is `true`).
-- Add a method `updatePeriod(periodId, $event)` that should be called on `change` event on both `input` tags. This method emits an event `periodUpdate` with a period id and its checked property.
+- Add a method `updatePeriod(periodId, $event)` that should be called on `change` event on both `input` tags. This method emits an event `periodUpdate` with a period id and its `checked` property.
 - In `App` component, add a method `updatePeriod(periodId, checked)` that should be called on `periodUpdate`. In this method, you need to update `periods` boolean flags.
 - In `Movie` component, add a new prop: `periods` (type `Object`). As you can guess, this prop should be used to transmit `periods` from `App` component.
 - Add a new `computed` property `ticketsAvailable()` that should return `true` if both `periods` are checked or unchecked. If `BEFORE_7` period is checked, the method should return `true` only if the movie has tickets available before 7 for the current day. If `AFTER_7` period is checked, the method should return `true` only if the movie has tickets available after 7 for the current day. Use this `computed` property in a `v-if` directive on the root `tag` (`<article>`) of the template to show or hide movies according to the checked periods.
+
+> Filter movies by genre
+
+- Add a new property in `App` component `data()` function:
+
+```javascript
+genres: [
+  { id: 'ACTION', label: 'Action', checked: false },
+  { id: 'ADVENTURE', label: 'Adventure', checked: false },
+  { id: 'ANIMATION', label: 'Animation', checked: false },
+  { id: 'BIOGRAPHY', label: 'Biography', checked: false },
+  { id: 'COMEDY', label: 'Comedy', checked: false },
+  { id: 'CRIME', label: 'Crime', checked: false },
+  { id: 'DRAMA', label: 'Drama', checked: false },
+  { id: 'FANTASY', label: 'Fantasy', checked: false },
+  { id: 'HORROR', label: 'Horror', checked: false },
+  { id: 'ROMANCE', label: 'Romance', checked: false },
+  { id: 'SCI-FI', label: 'Sci-Fi', checked: false }
+]
+```
+
+This property handles the state of `GenreFilter` component.
+- Add a new prop: `genres` (type `Array`) in `GenreFilter` to receive `genres` data from `App` component template.
+- In `GenreFilter` component template, replace all hard coded `<li>` tags with a single `<li>` tag and a `v-for` directive that loops on `genres` list. Bind `id`, `label` and `checked` properties on `<input>` tag.
+- As you did for `TimeFilter`, add a method `updateGenre(genreId, $event)` that emits a `genreUpdate` event with the current genre id and its `checked` property.
+- Handle this event in `App` component to update `genres` data.
+- In `Movie` component, add a new prop: `genres` (type `Array`) to get the `genres` list from `App` component.
+- Add a new `computed` property `genresAvailable()` that should return `true` if all genres are unchecked. Otherwise, `true` should be returned only if the movie has the selected genre(s). Use this `computed` property in the `v-if` so that movies are filtered by periods **AND** by genres.
+
+> Filter movies by country
