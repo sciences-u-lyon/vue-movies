@@ -171,3 +171,21 @@ This property handles the state of `GenreFilter` component.
 - Add a new `computed` property `genresAvailable()` that should return `true` if all genres are unchecked. Otherwise, `true` should be returned only if the movie has the selected genre(s). Use this `computed` property in the `v-if` so that movies are filtered by periods **AND** by genres.
 
 > Filter movies by country
+
+- Add a new property in `App` component `data()` function:
+
+```javascript
+countries: [
+  { id: 'USA', label: 'USA', checked: false },
+  { id: 'FRANCE', label: 'France', checked: false },
+  { id: 'SOUTH_KOREA', label: 'South Korea', checked: false }
+]
+```
+
+This property handles the state of `CountryFilter` component.
+- Add a new prop: `countries` (type `Array`) in `CountryFilter` to receive `countries` data from `App` component template.
+- In `CountryFilter` component template, replace all hard coded `<li>` tags with a single `<li>` tag and a `v-for` directive that loops on `countries` list. Bind `id`, `label` and `checked` properties on `<input>` tag.
+- As you did for `GenreFilter`, add a method `updateCountry(countryId, $event)` that emits a `countryUpdate` event with the current genre id and its `checked` property.
+- Handle this event in `App` component to update `countries` data.
+- In `Movie` component, add a new prop: `countries` (type `Array`) to get the `countries` list from `App` component.
+- Add a new `computed` property `countriesAvailable()` that should return `true` if all countries are unchecked. Otherwise, `true` should be returned only if the movie has the selected country (a movie has only 1 country). Use this `computed` property in the `v-if` so that movies are filtered by periods **AND** by genres **AND** by countries.
