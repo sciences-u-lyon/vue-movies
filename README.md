@@ -189,3 +189,22 @@ This property handles the state of `CountryFilter` component.
 - Handle this event in `App` component to update `countries` data.
 - In `Movie` component, add a new prop: `countries` (type `Array`) to get the `countries` list from `App` component.
 - Add a new `computed` property `countriesAvailable()` that should return `true` if all countries are unchecked. Otherwise, `true` should be returned only if the movie has the selected country (a movie has only 1 country). Use this `computed` property in the `v-if` so that movies are filtered by periods **AND** by genres **AND** by countries.
+
+## Step 5
+
+> Fetch movies from server
+
+To fetch movies from server, we're going to use `vue-movies-server` repository. Download / Clone the project on your computer from: https://github.com/sciences-u-lyon/vue-movies-server.
+
+To start the server:
+- Go into `/vue-movies-server`
+- Install dependencies: `npm install`
+- Run the start command: `npm start`
+
+Back to `vue-movies` app, use `axios`, a promise based HTTP client for the browser, to fetch movies from an API, instead of getting them from a JSON file.
+- Install `axios` in the project dependencies: `npm install axios --save`.
+- In `App` component, set `movies` in `data()` as an empty array.
+- in a `hook` function of the Vue instance of `App` component, fetch movies from http://localhost:3000/movies with a `GET` HTTP request with `axios` to set `movies`.
+
+As you will notice, movies posters are not displayed anymore. This is because, now, we need to fetch images from the server.
+- In `Movie` component, use a new computed property `poster` to fetch the current movie poster with the following URL: http://localhost:3000/img/movie-poster-name.jpg.
