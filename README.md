@@ -208,3 +208,133 @@ Back to `vue-movies` app, use `axios`, a promise based HTTP client for the brows
 
 As you will notice, movies posters are not displayed anymore. This is because, now, we need to fetch images from the server.
 - In `Movie` component, use a new computed property `poster` to fetch the current movie poster with the following URL: http://localhost:3000/img/movie-poster-name.jpg.
+
+## Step 6
+
+> Hands on Vue Router
+
+We're going to use `vue-router` to add a "checkout" view with a form to (fake) buy a movie ticket. But first, let's refactor our app to use `vue-router` with the current and only view (the list of movies).
+
+- Create a new folder `home` in the `components` folder.
+- Move all components except `Header` inside `home` folder.
+- Create a new component `Home` (with `<main>` as root tag in template) and move inside all code from `App`, so that `App` template now is:
+```html
+<template>
+  <section class="section">
+    <div class="container">
+      <Header />
+
+    </div>
+  </section>
+</template>
+```
+- Create a new folder `router` in `src`, with a single file `index.js`.
+- In this file, export an instance of `Router` with a single route mapped to `Home` component (URL should be `/`).
+- Import this `Router` instance in `main.js` to add it as a property to the `Vue` instance.
+- Finally, in `App` component, use `<router-view />` tag (right below `<Header />`) to dynamically load `Home` component with the default URL: `/`.
+
+Let's now add the "checkout" view:
+
+- Create a new folder `checkout` in the `components` folder.
+- In this folder, create a new component `Checkout` with the following template:
+```html
+<template>
+  <main>
+    <div class="columns is-variable">
+      <div class="column is-half">
+        <section class="section has-full-width">
+          <Movie />
+        </section>
+      </div>
+      <div class="column">
+        <TicketForm />
+      </div>
+    </div>
+  </main>
+</template>
+```
+- As you can, there are 2 children components within `Checkout`: `Movie` and `TicketForm`. This `Movie` is not the `Movie` component we use for the movies list (this is a simplified version).
+- In the `checkout` folder, create a `Movie` component with the following template:
+```html
+<template>
+  <article class="media">
+    <div class="columns is-variable">
+      <div class="column is-two-fifths">
+        <img src="/static/img/avengers.jpg">
+      </div>
+      <div class="column">
+        <div class="media-content">
+          <div class="content">
+            <strong>Avengers: Infinity War</strong>
+            <br>
+            <small>4 May 2018 / Action, Adventure, Fantasy / USA</small>
+            <p class="abstract">The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</template>
+```
+- Then, create a `TicketForm` component with the following template:
+```html
+<template>
+  <section class="section has-full-width">
+    <h1 class="title">
+      <span class="icon is-small"><i class="fa fa-calendar" aria-hidden="true"></i></span>&nbsp;
+      <span>Today at 20:00</span>
+    </h1>
+    <form novalidate>
+      <div class="field">
+        <label class="label" for="email">Email</label>
+        <div class="control has-icons-left has-icons-right">
+          <!-- Add class `is-danger` to input when invalid -->
+          <input id="email" class="input" type="email" placeholder="john.doe@domain.com" required>
+          <span class="icon is-small is-left">
+            <i class="fa fa-envelope"></i>
+          </span>
+          <!-- Add code below when invalid -->
+          <!-- <span class="icon is-small is-right">
+            <i class="fa fa-warning"></i>
+          </span> -->
+        </div>
+        <!-- Add code below when invalid -->
+        <!-- <p class="help is-danger">Email is invalid</p> -->
+      </div>
+      <div class="field">
+        <label class="label" for="creditcard">Credit Card Number</label>
+        <div class="control has-icons-left has-icons-right">
+          <!-- Add class `is-danger` to input when invalid -->
+          <input id="creditcard" class="input" type="number" placeholder="12345678" required>
+          <span class="icon is-small is-left">
+            <i class="fa fa-credit-card-alt"></i>
+          </span>
+          <!-- Add code below when invalid -->
+          <!-- <span class="icon is-small is-right">
+            <i class="fa fa-warning"></i>
+          </span> -->
+        </div>
+        <!-- Add code below when invalid -->
+        <!-- <p class="help is-danger">Credit Card Number is invalid (must be 8 numbers)</p> -->
+      </div>
+      <div class="field">
+        <div class="control">
+          <button class="button is-primary">
+            <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+            <span>Buy Ticket</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
+</template>
+```
+- In `/router/index.js`, add a route `/checkout/:movieId` mapped to `Checkout` component.
+
+This `Checkout` component should be loaded on the ticket click event of a movie.
+
+- Add a `checkout` method on the `Ticket` component that will `$emit` a `checkout` event when we click on the `<a>` tag.
+- In `home/Movie` component, handle the `checkout` event from `Ticket` and use the `$router` object to push the `/checkout` route with `{ movieId }` as params and `{ dayIndex, ticketId }` as query. For example, if we want to checkout the ticket of id 2 for today (day index 0) and for the first movie, the URL should be: `/checkout/1?dayIndex=0&ticketId=2`.
+- In `checkout/Movie` component, use the `created` hook function to fetch the movie from the server. You need to use the movie id from the URL (`this.$route.params`) and execute a `GET` HTTP request with `axios` on the following API route: `http://localhost:3000/movies/movieId`.
+- Once you get the `movie` data, pass it as a `props` to the `Movie` component and replace the hard coded values.
+- Finally, you need to get the day value matching the given `dayIndex` and find the ticket object matching the `ticketId` (form the movie tickets list), so that you can replace the hard coded string "Today at 20:00" in `TicketForm` component with dynamic values.
