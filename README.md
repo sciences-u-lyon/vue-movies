@@ -338,3 +338,35 @@ This `Checkout` component should be loaded on the ticket click event of a movie.
 - In `checkout/Movie` component, use the `created` hook function to fetch the movie from the server. You need to use the movie id from the URL (`this.$route.params`) and execute a `GET` HTTP request with `axios` on the following API route: `http://localhost:3000/movies/movieId`.
 - Once you get the `movie` data, pass it as a `props` to the `Movie` component and replace the hard coded values.
 - Finally, you need to get the day value matching the given `dayIndex` and find the ticket object matching the `ticketId` (form the movie tickets list), so that you can replace the hard coded string "Today at 20:00" in `TicketForm` component with dynamic values.
+
+## Step 7
+
+> Handling checkout form with validation
+
+To handle form validation, we're going to use `VeeValidate`, a simple input validation plugin for Vue.
+- Install `VeeValidate` in `vue-movies` dependencies: `npm install vee-validate --save`.
+- In `TicketForm` component, add a `data()` function that returns an object with 3 properties: `submitted` set to `false`, `email` and `creditCard`, both set to `''` (empty string).
+- Bind these properties to their corresponding `<input>` tag with the `v-model` directive.
+- Use `v-validate` directive on `<input>` tags to set validations rules:
+  - `email` should be `required` and of type `email`.
+  - `creditCard` should be `required` and count exactly 8 digits.
+- Use `errors` special object (from `VeeValidate`) to add `is-error` class to `<input>` tags when they are not valid AND the form was submitted. Use this object as well to show the warning icons.
+- The submit button should be disabled if `email` AND `creditCard` fields are pristine. Use `fields` special object to handle it.
+- Add a method `checkoutTicket` to set `submitted` to `true` and emit a `checkout` event with `email` and `creditCard` values, only if the form is valid.
+- This method should be called on the form `submit` event.
+
+The last thing we need to do now to complete the project, is to send the user inputs and the selected movie to the server:
+- In `Checkout` component, handle `checkout` event from `TicketForm` to call a `checkout` method.
+- This method should send a `POST` HTTP request with `axios` to the following API route: http://localhost:3000/checkout, and the following params:
+```javascript
+{
+  email,
+  creditCard,
+  movie: {
+    title,
+    day,
+    time
+  }
+}
+```
+- Once the request is sent with success, you should redirect the URL to `Home` component (`/`).
