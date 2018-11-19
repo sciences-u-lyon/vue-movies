@@ -26,7 +26,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="./assets/img/avengers.jpg">
+                  <img :src="require('@/assets/img/avengers.jpg')">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -63,7 +63,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="./assets/img/baywatch.jpg">
+                  <img :src="require('@/assets/img/baywatch.jpg')">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -92,7 +92,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="./assets/img/black-panther.jpg">
+                  <img :src="require('@/assets/img/black-panther.jpg')">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -125,7 +125,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="./assets/img/bridget-jones-baby.jpg">
+                  <img :src="require('@/assets/img/bridget-jones-baby.jpg')">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -157,7 +157,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="./assets/img/coco.jpg">
+                  <img :src="require('@/assets/img/coco.jpg')">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -185,7 +185,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="./assets/img/dallas-buyers-club.jpg">
+                  <img :src="require('@/assets/img/dallas-buyers-club.jpg')">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -213,7 +213,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="./assets/img/inception.jpg">
+                  <img :src="require('@/assets/img/inception.jpg')">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -246,7 +246,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="./assets/img/intouchable.jpg">
+                  <img :src="require('@/assets/img/intouchable.jpg')">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -275,7 +275,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="./assets/img/jurassic-world.jpg">
+                  <img :src="require('@/assets/img/jurassic-world.jpg')">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -308,7 +308,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="./assets/img/the-last-jedi.jpg">
+                  <img :src="require('@/assets/img/the-last-jedi.jpg')">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -349,7 +349,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="./assets/img/toy-story.jpg">
+                  <img :src="require('@/assets/img/toy-story.jpg')">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -378,7 +378,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="./assets/img/train-to-busan.jpg">
+                  <img :src="require('@/assets/img/train-to-busan.jpg')">
                 </div>
                 <div class="column">
                   <div class="media-content">
