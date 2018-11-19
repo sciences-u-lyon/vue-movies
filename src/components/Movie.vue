@@ -12,7 +12,7 @@
             <small>{{ subtitle }}</small>
             <p class="abstract">{{ movie.abstract }}</p>
 
-            <Ticket v-for="ticket in movie.days[0].tickets"
+            <Ticket v-for="ticket in movie.days[currentDayIndex].tickets"
               :key="ticket.id"
               :time="ticket.time" />
           </div>
@@ -24,9 +24,9 @@
 
 <script>
 import Ticket from '@/components/Ticket.vue'
-
 export default {
   props: {
+    currentDayIndex: Number,
     movie: Object
   },
   components: {

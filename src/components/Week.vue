@@ -3,13 +3,11 @@
     <div class="container">
       <div class="tabs is-toggle">
         <ul>
-          <li class="is-active"><a>Today</a></li>
-          <li><a>Mon 1/1</a></li>
-          <li><a>Tue 2/1</a></li>
-          <li><a>Wed 3/1</a></li>
-          <li><a>Thu 4/1</a></li>
-          <li><a>Fri 5/1</a></li>
-          <li><a>Sat 6/1</a></li>
+          <li v-for="(day, index) in days"
+            :key="index"
+            :class="{ 'is-active': isActive(index) }">
+            <a @click="selectDay(index)">{{ day }}</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -17,5 +15,30 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    currentDayIndex: Number
+  },
+  data () {
+    return {
+      days: [
+        'Today',
+        'Mon 1/1',
+        'Tue 2/1',
+        'Wed 3/1',
+        'Thu 4/1',
+        'Fri 5/1',
+        'Sat 6/1'
+      ]
+    }
+  },
+  methods: {
+    isActive (index) {
+      return this.currentDayIndex === index
+    },
+    selectDay (index) {
+      this.$emit('dayUpdate', index)
+    }
+  }
+}
 </script>
