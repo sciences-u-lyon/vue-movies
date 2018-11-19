@@ -6,16 +6,10 @@
 
 ``` bash
 # install dependencies
-npm install
+yarn
 
 # serve with hot reload at localhost:8080
-npm start
-
-# run unit tests
-npm test
-
-# run unit tests with watch mode
-npm test -- --watch
+yarn start
 ```
 
 ## Step 1
@@ -281,7 +275,7 @@ Let's now add the "checkout" view:
 <template>
   <section class="section has-full-width">
     <h1 class="title">
-      <span class="icon is-small"><i class="fa fa-calendar" aria-hidden="true"></i></span>&nbsp;
+      <span class="icon is-small"><i class="fas fa-calendar-alt" aria-hidden="true"></i></span>&nbsp;
       <span>Today at 20:00</span>
     </h1>
     <form novalidate>
@@ -291,11 +285,11 @@ Let's now add the "checkout" view:
           <!-- Add class `is-danger` to input when invalid -->
           <input id="email" class="input" type="email" placeholder="john.doe@domain.com" required>
           <span class="icon is-small is-left">
-            <i class="fa fa-envelope"></i>
+            <i class="fas fa-envelope"></i>
           </span>
           <!-- Add code below when invalid -->
           <!-- <span class="icon is-small is-right">
-            <i class="fa fa-warning"></i>
+            <i class="fas fa-exclamation"></i>
           </span> -->
         </div>
         <!-- Add code below when invalid -->
@@ -307,11 +301,11 @@ Let's now add the "checkout" view:
           <!-- Add class `is-danger` to input when invalid -->
           <input id="creditcard" class="input" type="number" placeholder="12345678" required>
           <span class="icon is-small is-left">
-            <i class="fa fa-credit-card-alt"></i>
+            <i class="fas fa-credit-card"></i>
           </span>
           <!-- Add code below when invalid -->
           <!-- <span class="icon is-small is-right">
-            <i class="fa fa-warning"></i>
+            <i class="fas fa-exclamation"></i>
           </span> -->
         </div>
         <!-- Add code below when invalid -->
@@ -320,7 +314,7 @@ Let's now add the "checkout" view:
       <div class="field">
         <div class="control">
           <button class="button is-primary">
-            <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+            <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
             <span>Buy Ticket</span>
           </button>
         </div>

@@ -26,7 +26,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="/static/img/avengers.jpg">
+                  <img src="./assets/img/avengers.jpg">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -39,19 +39,19 @@
                       </p>
 
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>14:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>18:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>20:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>22:00</span>
                       </a>
                     </div>
@@ -63,7 +63,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="/static/img/baywatch.jpg">
+                  <img src="./assets/img/baywatch.jpg">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -76,11 +76,11 @@
                       </p>
 
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>14:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>18:00</span>
                       </a>
                     </div>
@@ -92,7 +92,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="/static/img/black-panther.jpg">
+                  <img src="./assets/img/black-panther.jpg">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -105,15 +105,15 @@
                       </p>
 
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>16:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>18:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>20:00</span>
                       </a>
                     </div>
@@ -125,7 +125,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="/static/img/bridget-jones-baby.jpg">
+                  <img src="./assets/img/bridget-jones-baby.jpg">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -137,15 +137,15 @@
                         Bridget's focus on single life and her career is interrupted when she finds herself pregnant, but with one hitch ... she can only be fifty percent sure of the identity of her baby's father.
                       </p>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>14:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>16:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>18:00</span>
                       </a>
                     </div>
@@ -157,7 +157,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="/static/img/coco.jpg">
+                  <img src="./assets/img/coco.jpg">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -169,11 +169,11 @@
                         Aspiring musician Miguel, confronted with his family's ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer.
                       </p>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>14:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>17:00</span>
                       </a>
                     </div>
@@ -185,7 +185,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="/static/img/dallas-buyers-club.jpg">
+                  <img src="./assets/img/dallas-buyers-club.jpg">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -197,11 +197,11 @@
                         In 1985 Dallas, electrician and hustler Ron Woodroof works around the system to help AIDS patients get the medication they need after he is diagnosed with the disease.
                       </p>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>20:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>22:00</span>
                       </a>
                     </div>
@@ -213,7 +213,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="/static/img/inception.jpg">
+                  <img src="./assets/img/inception.jpg">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -226,15 +226,15 @@
                       </p>
 
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>18:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>20:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>22:00</span>
                       </a>
                     </div>
@@ -246,7 +246,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="/static/img/intouchable.jpg">
+                  <img src="./assets/img/intouchable.jpg">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -259,11 +259,11 @@
                       </p>
 
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>16:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>18:00</span>
                       </a>
                     </div>
@@ -275,7 +275,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="/static/img/jurassic-world.jpg">
+                  <img src="./assets/img/jurassic-world.jpg">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -288,15 +288,15 @@
                       </p>
 
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>20:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>22:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>23:00</span>
                       </a>
                     </div>
@@ -308,7 +308,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="/static/img/the-last-jedi.jpg">
+                  <img src="./assets/img/the-last-jedi.jpg">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -321,23 +321,23 @@
                       </p>
 
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>14:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>16:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>18:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>20:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>22:00</span>
                       </a>
                     </div>
@@ -349,7 +349,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="/static/img/toy-story.jpg">
+                  <img src="./assets/img/toy-story.jpg">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -362,11 +362,11 @@
                       </p>
 
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>14:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>16:00</span>
                       </a>
                     </div>
@@ -378,7 +378,7 @@
             <article class="media">
               <div class="columns is-variable">
                 <div class="column is-one-quarter">
-                  <img src="/static/img/train-to-busan.jpg">
+                  <img src="./assets/img/train-to-busan.jpg">
                 </div>
                 <div class="column">
                   <div class="media-content">
@@ -391,11 +391,11 @@
                       </p>
 
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>20:00</span>
                       </a>
                       <a class="button is-light ticket">
-                        <span class="icon is-small"><i class="fa fa-ticket"></i></span>
+                        <span class="icon is-small"><i class="fas fa-ticket-alt"></i></span>
                         <span>22:00</span>
                       </a>
                     </div>
