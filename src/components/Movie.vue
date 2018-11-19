@@ -2,7 +2,7 @@
   <article class="media">
     <div class="columns is-variable">
       <div class="column is-one-quarter">
-        <img :src="poster">
+        <img :src="require(`@/assets/img/${poster}`)">
       </div>
       <div class="column">
         <div class="media-content">
