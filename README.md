@@ -196,7 +196,7 @@ To start the server:
 - Run the start command: `npm start`
 
 Back to `vue-movies` app, use `axios`, a promise based HTTP client for the browser, to fetch movies from an API, instead of getting them from a JSON file.
-- Install `axios` in the project dependencies: `npm install axios --save`.
+- Install `axios` in the project dependencies: `npm install axios`.
 - In `App` component, set `movies` in `data()` as an empty array.
 - in a `hook` function of the Vue instance of `App` component, fetch movies from http://localhost:3000/movies with a `GET` HTTP request with `axios` to set `movies`.
 
@@ -207,8 +207,9 @@ As you will notice, movies posters are not displayed anymore. This is because, n
 
 > Hands on Vue Router
 
-We're going to use `vue-router` to add a "checkout" view with a form to (fake) buy a movie ticket. But first, let's refactor our app to use `vue-router` with the current and only view (the list of movies).
+We're going to use `Vue Router` to add a "checkout" view with a form to (fake) buy a movie ticket. But first, let's refactor our app to use `Vue Router` with the current and only view (the list of movies).
 
+- Install `Vue Router` in the project dependencies: `npm install vue-router`.
 - Create a new folder `home` in the `components` folder.
 - Move all components except `Header` inside `home` folder.
 - Create a new component `Home` (with `<main>` as root tag in template) and move inside all code from `App`, so that `App` template now is:
@@ -283,7 +284,7 @@ Let's now add the "checkout" view:
         <label class="label" for="email">Email</label>
         <div class="control has-icons-left has-icons-right">
           <!-- Add class `is-danger` to input when invalid -->
-          <input id="email" class="input" type="email" placeholder="john.doe@domain.com" required>
+          <input id="email" name="email" class="input" type="email" placeholder="john.doe@domain.com" required>
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>
@@ -299,7 +300,7 @@ Let's now add the "checkout" view:
         <label class="label" for="creditcard">Credit Card Number</label>
         <div class="control has-icons-left has-icons-right">
           <!-- Add class `is-danger` to input when invalid -->
-          <input id="creditcard" class="input" type="number" placeholder="12345678" required>
+          <input id="creditcard" name="creditcard" class="input" type="number" placeholder="12345678" required>
           <span class="icon is-small is-left">
             <i class="fas fa-credit-card"></i>
           </span>
@@ -329,7 +330,7 @@ This `Checkout` component should be loaded on the ticket click event of a movie.
 
 - Add a `checkout` method on the `Ticket` component that will `$emit` a `checkout` event when we click on the `<a>` tag.
 - In `home/Movie` component, handle the `checkout` event from `Ticket` and use the `$router` object to push the `/checkout` route with `{ movieId }` as params and `{ dayIndex, ticketId }` as query. For example, if we want to checkout the ticket of id 2 for today (day index 0) and for the first movie, the URL should be: `/checkout/1?dayIndex=0&ticketId=2`.
-- In `checkout/Movie` component, use the `created` hook function to fetch the movie from the server. You need to use the movie id from the URL (`this.$route.params`) and execute a `GET` HTTP request with `axios` on the following API route: `http://localhost:3000/movies/movieId`.
+- In `checkout/Checkout` component, use the `created` hook function to fetch the movie from the server. You need to use the movie id from the URL (`this.$route.params`) and execute a `GET` HTTP request with `axios` on the following API route: `http://localhost:3000/movies/movieId`.
 - Once you get the `movie` data, pass it as a `props` to the `Movie` component and replace the hard coded values.
 - Finally, you need to get the day value matching the given `dayIndex` and find the ticket object matching the `ticketId` (form the movie tickets list), so that you can replace the hard coded string "Today at 20:00" in `TicketForm` component with dynamic values.
 
@@ -338,16 +339,17 @@ This `Checkout` component should be loaded on the ticket click event of a movie.
 > Handling checkout form with validation
 
 To handle form validation, we're going to use `VeeValidate`, a simple input validation plugin for Vue.
-- Install `VeeValidate` in `vue-movies` dependencies: `npm install vee-validate --save`.
+- Install `VeeValidate` in `vue-movies` dependencies: `npm install vee-validate`.
+- Add `VeeValidate` plugin to the root Vue instance in `src/main.js` : `Vue.use(VeeValidate)`.
 - In `TicketForm` component, add a `data()` function that returns an object with 3 properties: `submitted` set to `false`, `email` and `creditCard`, both set to `''` (empty string).
-- Bind these properties to their corresponding `<input>` tag with the `v-model` directive.
+- Bind `email` and `creditCard` properties to their corresponding `<input>` tag with the `v-model` directive.
 - Use `v-validate` directive on `<input>` tags to set validations rules:
   - `email` should be `required` and of type `email`.
   - `creditCard` should be `required` and count exactly 8 digits.
-- Use `errors` special object (from `VeeValidate`) to add `is-error` class to `<input>` tags when they are not valid AND the form was submitted. Use this object as well to show the warning icons.
-- The submit button should be disabled if `email` AND `creditCard` fields are pristine. Use `fields` special object to handle it.
+- Add `is-danger` class to `<input>` tags when they are not valid AND the form was submitted. Also, show the warning icons. Use `errors.has('fieldName')` (from `VeeValidate`). It will return `true` if `fieldName` input has any error.
+- The `buy ticket` button should be disabled if `email` AND `creditCard` fields are pristine. Use `(fields['fieldName'] || {}).pristine`. It will return `true` if `fieldName` is pristine.
 - Add a method `checkoutTicket` to set `submitted` to `true` and emit a `checkout` event with `email` and `creditCard` values, only if the form is valid.
-- This method should be called on the form `submit` event.
+- This method should be called on the `buy ticket` click event (use `@click.prevent="checkoutTicket"` to prevent page reload).
 
 The last thing we need to do now to complete the project, is to send the user inputs and the selected movie to the server:
 - In `Checkout` component, handle `checkout` event from `TicketForm` to call a `checkout` method.
