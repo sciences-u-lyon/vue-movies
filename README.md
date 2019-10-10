@@ -338,8 +338,8 @@ This `Checkout` component should be loaded on the ticket click event of a movie.
 
 > Handling checkout form with validation
 
-To handle form validation, we're going to use `VeeValidate`, a simple input validation plugin for Vue.
-- Install `VeeValidate` in `vue-movies` dependencies: `npm install vee-validate`.
+To handle form validation, we're going to use `VeeValidate v2` (http://vee-validate.logaretm.com/v2/), a simple input validation plugin for Vue.
+- Install `VeeValidate` in `vue-movies` dependencies: `npm install vee-validate@2`.
 - Add `VeeValidate` plugin to the root Vue instance in `src/main.js` : `Vue.use(VeeValidate)`.
 - In `TicketForm` component, add a `data()` function that returns an object with 3 properties: `submitted` set to `false`, `email` and `creditCard`, both set to `''` (empty string).
 - Bind `email` and `creditCard` properties to their corresponding `<input>` tag with the `v-model` directive.
